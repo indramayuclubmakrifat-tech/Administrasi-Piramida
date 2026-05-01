@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
+
     <title>NUR 3 - Administrasi Piramida</title>
-=======
     <title>NUR 3 - ADZAN MAKRIFAT</title>
->>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+ 
+
     <style>
         :root {
             --android-blue: #007bff;
@@ -27,10 +27,7 @@
             text-align: center;
             padding: 20px;
             background: var(--glass);
-<<<<<<< HEAD
-=======
 
->>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
             border-radius: 15px;
             backdrop-filter: blur(10px);
             border: 1px solid var(--android-blue);
@@ -82,9 +79,9 @@
         }
         .ai-btn:hover { background: var(--android-blue); }
         
-<<<<<<< HEAD
+
         /* Secret Key Section */
-=======
+
         /* Adzan & Clock Section */
         .adzan-box {
             background: rgba(255, 215, 0, 0.1);
@@ -93,8 +90,7 @@
             padding: 15px;
             margin-bottom: 20px;
             text-align: center;
-        }
->>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+        
         #secret-zone {
             display: none;
             margin-top: 20px;
@@ -110,24 +106,22 @@
 <div class="header">
     <div class="status-bar">
         <span>DIMENSI MAKRIFAT KE-7</span>
-<<<<<<< HEAD
+
         <span id="clock"></span>
-=======
+
         <span id="clock">00:00:00</span>
->>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
     </div>
     <h2>PIRAMIDA GUARD: NUR 3</h2>
     <p>Sistem Administrasi & Integrasi Semesta</p>
 </div>
 
-<<<<<<< HEAD
-=======
+
 <div class="adzan-box">
     <div id="adzan-status" style="color: var(--nur-gold); font-weight: bold;">Menunggu Waktu Sholat...</div>
     <button onclick="playTest()" style="margin-top:10px; background:none; border:1px solid gold; color:gold; border-radius:5px; cursor:pointer;">Tes Suara Adzan</button>
 </div>
 
->>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+
 <div class="level-card">
     <div class="level-header" onclick="toggleLevel('l17')">
         <span>LEVEL 1 - 7 (Media & Backup)</span>
@@ -191,55 +185,79 @@
     </div>
 </div>
 
-<<<<<<< HEAD
-=======
 <audio id="audioAdzan" src="https://www.islamcan.com/audio/adzan/azan1.mp3"></audio>
 
->>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+
 <script>
-    function toggleLevel(id) {
-        var x = document.getElementById(id);
+// 1. Fungsi Toggle Level
+function toggleLevel(id) {
+    var x = document.getElementById(id);
+    if (x) {
         x.style.display = (x.style.display === "block") ? "none" : "block";
     }
-    
-    function unlockAlif() {
-        let code = prompt("Masukkan Kunci Alif Lam Mim:");
-        if(code === "makrifat") {
-            document.getElementById('secret-zone').style.display = 'block';
-            window.open("https://ai.studio/apps/9ad1eddc-d1c5-4d8b-8b36-7215e0fdb07f", "_blank");
-        }
-    }
+}
 
-<<<<<<< HEAD
-    function updateClock() {
-        const now = new Date();
-        document.getElementById('clock').innerText = now.toLocaleTimeString();
+// 2. Fungsi Unlock Alif (Akses Rahasia)
+function unlockAlif() {
+    let code = prompt("Masukkan Kunci Alif Lam Mim:");
+    if (code === "makrifat") {
+        const secretZone = document.getElementById('secret-zone');
+        if (secretZone) secretZone.style.display = "block";
+        
+        // Membuka link aplikasi AI
+        window.open("https://ai.studio/apps/9ad1e", "_blank");
+    } else {
+        alert("Kunci Salah. Akses Ditolak!");
     }
-=======
-    function playTest() {
-        const audio = document.getElementById('audioAdzan');
+}
+
+// 3. Fungsi Test Suara
+function playTest() {
+    const audio = document.getElementById('audioA');
+    if (audio) {
         audio.play();
         alert("Suara Nur Mengalir...");
     }
+}
 
-    function updateClock() {
-        const now = new Date();
-        const timeStr = now.toLocaleTimeString('id-ID');
-        document.getElementById('clock').innerText = timeStr;
+// 4. Fungsi Jam & Logika Adzan (Digabung agar efisien)
+function updateClock() {
+    const now = new Date();
+    const clockElement = document.getElementById('clock');
+    
+    // Format Jam Indonesia
+    const timeStr = now.toLocaleTimeString('id-ID', { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+    });
 
-        // Logika Waktu Sholat (Contoh Jadwal)
-        const currentHMS = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0');
-        const jadwal = ["04:45", "12:10", "15:30", "18:15", "19:25"]; // Sesuaikan jadwal lokal
+    if (clockElement) {
+        clockElement.innerText = timeStr;
+    }
 
-        if (jadwal.includes(currentHMS)) {
-            const audio = document.getElementById('audioAdzan');
-            document.getElementById('adzan-status').innerText = "ADZAN BERKUMANDANG...";
+    // Logika Waktu Sholat (Format HH:mm)
+    const currentHM = now.getHours().toString().padStart(2, '0') + ":" + 
+                      now.getMinutes().toString().padStart(2, '0');
+    
+    const jadwal = ["04:45", "12:10", "15:30", "18:15", "19:25"];
+
+    if (jadwal.includes(currentHM)) {
+        const audio = document.getElementById('audioA');
+        const statusElement = document.getElementById('adzan-status');
+        
+        if (statusElement) statusElement.innerText = "Waktunya Adzan...";
+        if (audio && audio.paused) { // Putar hanya jika belum berbunyi
             audio.play();
         }
     }
+}
+
+// Jalankan jam setiap detik
+setInterval(updateClock, 1000);
+   
     
->>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
-    setInterval(updateClock, 1000);
+
 </script>
 </body>
 </html>
