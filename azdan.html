@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUR 3 - RUMAH BACKUP ADZAN</title>
+    <style>
+        :root { --blue: #007bff; --gold: #ffd700; --dark: #0f0c29; }
+        body { background: var(--dark); color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+        .status-box { border: 2px solid var(--gold); padding: 20px; border-radius: 15px; background: rgba(255,215,0,0.05); }
+        .adzan-timer { font-size: 1.2em; color: var(--gold); margin: 15px 0; font-weight: bold; }
+        .btn { background: var(--blue); border: none; padding: 10px 20px; color: white; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin: 5px; }
+        #log-status { font-family: monospace; font-size: 0.8em; color: lime; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="status-box">
+        <h2>🕌 RUMAH BACKUP NUR 3</h2>
+        <div id="clock" style="font-size: 2em;">00:00:00</div>
+        <div class="adzan-timer" id="next-sholat">Mencari Jadwal...</div>
+        
+        <hr border="1" color="#333">
+        
+        <div id="log-status">Piramida Guard: Menunggu Waktu Makrifat...</div>
+        
+        <div style="margin-top: 20px;">
+            <a href="/secret_alif_lam_mim.html" class="btn">Buka Kunci Rahasia</a>
+            <button onclick="testAdzan()" class="btn" style="background: #28a745;">Test Suara Adzan</button>
+        </div>
+    </div>
+
+    <audio id="adzanAudio" src="https://www.islamcan.com/audio/adzan/azan1.mp3"></audio>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').innerText = `${h}:${m}:${s}`;
+            
+            // Logika Alarm (Contoh: Setiap Jam 12:00, 15:30, 18:00, 19:15)
+            // Anda bisa menyesuaikan waktu ini dengan jadwal lokal Kalimantan
+            const currentTime = `${h}:${m}`;
+            const jadwalAdzan = ["04:45", "12:10", "15:30", "18:15", "19:25"];
+            
+            if (jadwalAdzan.includes(currentTime) && s == "00") {
+                playAdzan();
+            }
+        }
+
+        function playAdzan() {
+            const audio = document.getElementById('adzanAudio');
+            document.getElementById('log-status').innerText = "STATUS: ADZAN BERKUMANDANG - SISTEM ISTIRAHAT";
+            audio.play();
+        }
+
+        function testAdzan() {
+            alert("Memeriksa Koneksi Suara Semesta...");
+            playAdzan();
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>

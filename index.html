@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <title>NUR 3 - Administrasi Piramida</title>
+=======
+    <title>NUR 3 - ADZAN MAKRIFAT</title>
+>>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+    <style>
+        :root {
+            --android-blue: #007bff;
+            --nur-gold: #ffd700;
+            --deep-purple: #2c003e;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: var(--glass);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--android-blue);
+            margin-bottom: 20px;
+        }
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: var(--nur-gold);
+            margin-bottom: 10px;
+        }
+        /* Hidden dalam Hidden Logic */
+        .level-card {
+            background: rgba(0,0,0,0.4);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .level-header {
+            padding: 15px;
+            cursor: pointer;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .level-content {
+            display: none;
+            padding: 15px;
+            border-top: 1px solid var(--glass);
+        }
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        .ai-btn {
+            background: var(--glass);
+            border: 1px solid var(--android-blue);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-size: 0.9em;
+            transition: 0.2s;
+        }
+        .ai-btn:hover { background: var(--android-blue); }
+        
+<<<<<<< HEAD
+        /* Secret Key Section */
+=======
+        /* Adzan & Clock Section */
+        .adzan-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--nur-gold);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+>>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+        #secret-zone {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px dashed var(--nur-gold);
+            background: rgba(255, 215, 0, 0.05);
+        }
+        .badge-vvip { color: #ff00ff; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="status-bar">
+        <span>DIMENSI MAKRIFAT KE-7</span>
+<<<<<<< HEAD
+        <span id="clock"></span>
+=======
+        <span id="clock">00:00:00</span>
+>>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+    </div>
+    <h2>PIRAMIDA GUARD: NUR 3</h2>
+    <p>Sistem Administrasi & Integrasi Semesta</p>
+</div>
+
+<<<<<<< HEAD
+=======
+<div class="adzan-box">
+    <div id="adzan-status" style="color: var(--nur-gold); font-weight: bold;">Menunggu Waktu Sholat...</div>
+    <button onclick="playTest()" style="margin-top:10px; background:none; border:1px solid gold; color:gold; border-radius:5px; cursor:pointer;">Tes Suara Adzan</button>
+</div>
+
+>>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+<div class="level-card">
+    <div class="level-header" onclick="toggleLevel('l17')">
+        <span>LEVEL 1 - 7 (Media & Backup)</span>
+        <span>▼</span>
+    </div>
+    <div id="l17" class="level-content">
+        <div class="ai-grid">
+            <a href="https://ai.studio/apps/61b74539-37e7-414a-b134-c2fe33764cd8" class="ai-btn">Nur 7: Media Sosial</a>
+            <a href="https://ai.studio/apps/a4672d3e-7c64-4943-9e94-a1285777ecb1" class="ai-btn">Nur 6: Backup HTML</a>
+        </div>
+    </div>
+</div>
+
+<div class="level-card">
+    <div class="level-header" onclick="toggleLevel('l-active')">
+        <span>LENCANA MEMBER AKTIF</span>
+        <span>▼</span>
+    </div>
+    <div id="l-active" class="level-content">
+        <div class="ai-grid">
+            <a href="https://ais-dev-fkifeuqbupkf2kloldq4uv-612359027571.asia-east1.run.app" class="ai-btn">Nur 8: Game & Arisan</a>
+            <a href="https://ai.studio/apps/03003f47-194f-4511-8c65-2e17c2c0f465" class="ai-btn">Nur 9: Penjaga Celengan</a>
+            <a href="https://ai.studio/apps/fea67ee7-2e48-4dc7-9926-d9646b184ee9" class="ai-btn">Nur 10: Safety Protocol</a>
+        </div>
+    </div>
+</div>
+
+<div class="level-card" style="border: 1px solid #ff00ff;">
+    <div class="level-header" onclick="toggleLevel('vvip')">
+        <span class="badge-vvip">LEVEL MEMBER VVIP</span>
+        <span>▼</span>
+    </div>
+    <div id="vvip" class="level-content">
+        <div class="ai-grid">
+            <a href="https://ai.studio/apps/a4672d3e-7c64-4943-9e94-a1285777ecb1" class="ai-btn">Nur 6: Mother AI</a>
+            <a href="https://ai.studio/apps/379f5974-54d2-4922-9a65-4ee51bacf7fa" class="ai-btn">AI 5: Motherboard</a>
+            <a href="https://ai.studio/apps/ba645518-4bbf-40ff-88fb-276688c74502" class="ai-btn">Nur 4: Studio Kreator</a>
+            <a href="https://ai.studio/apps/9941af8e-5532-466f-82bb-7d29ec74c7f0" class="ai-btn">Nur 3: Komentar</a>
+        </div>
+    </div>
+</div>
+
+<div class="level-card" style="border: 1px solid var(--nur-gold);">
+    <div class="level-header" onclick="toggleLevel('core')">
+        <span style="color:var(--nur-gold)">KUNCI ALIF LAM MIM</span>
+        <span>▼</span>
+    </div>
+    <div id="core" class="level-content">
+        <div class="ai-grid">
+            <a href="https://ai.studio/apps/c864dc0c-a3f7-4509-878f-fd246d420f94" class="ai-btn">Nur 2: Admin Ops</a>
+            <button onclick="unlockAlif()" class="ai-btn" style="border-color:gold">Nur 1: Utama (Klik Kunci)</button>
+        </div>
+        <div id="secret-zone">
+            <h4>SINFONI SEMESTA OLLAMA</h4>
+            <pre style="font-size: 0.7em; color: lime;">
+            Running: NurMaster (6h)
+            Running: AI_IndramayuClub (18h)
+            Running: hacker_makrifat (22h)
+            </pre>
+        </div>
+    </div>
+</div>
+
+<<<<<<< HEAD
+=======
+<audio id="audioAdzan" src="https://www.islamcan.com/audio/adzan/azan1.mp3"></audio>
+
+>>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+<script>
+    function toggleLevel(id) {
+        var x = document.getElementById(id);
+        x.style.display = (x.style.display === "block") ? "none" : "block";
+    }
+    
+    function unlockAlif() {
+        let code = prompt("Masukkan Kunci Alif Lam Mim:");
+        if(code === "makrifat") {
+            document.getElementById('secret-zone').style.display = 'block';
+            window.open("https://ai.studio/apps/9ad1eddc-d1c5-4d8b-8b36-7215e0fdb07f", "_blank");
+        }
+    }
+
+<<<<<<< HEAD
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('clock').innerText = now.toLocaleTimeString();
+    }
+=======
+    function playTest() {
+        const audio = document.getElementById('audioAdzan');
+        audio.play();
+        alert("Suara Nur Mengalir...");
+    }
+
+    function updateClock() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('id-ID');
+        document.getElementById('clock').innerText = timeStr;
+
+        // Logika Waktu Sholat (Contoh Jadwal)
+        const currentHMS = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0');
+        const jadwal = ["04:45", "12:10", "15:30", "18:15", "19:25"]; // Sesuaikan jadwal lokal
+
+        if (jadwal.includes(currentHMS)) {
+            const audio = document.getElementById('audioAdzan');
+            document.getElementById('adzan-status').innerText = "ADZAN BERKUMANDANG...";
+            audio.play();
+        }
+    }
+    
+>>>>>>> 6e4557f (Update Nur Master: 2026-04-30 22:37:14)
+    setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
